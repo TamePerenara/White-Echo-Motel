@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>White Echo Motel</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+	<img class="logo" height="100" src="Images/white_echo logo.png" width="150">
+	<h1 class="header">White Echo Motel Reservations</h1>
+</header>
+	<div class="main_content">
+		<h2>Select your check in date:</h2>
+		<label>Check in date:</label> <input id="checkIn" type="date" class="addCheck" onchange="updateRoom()">
+		<h2>Enter your number of nights:</h2>
+		<label>Number of nights:</label><input id="nights" type="number" min="1" max="10">
+		<div class="container "></div>
+		<br>
+
+	<div class="row">
+		<div class="column">
+	  <div class="roomCard" data-name="Studio Room" data-price="219">
+		  <img src="Images/studio room.jpg">
+		  <div class="textOverlay">
+		  <h3>Studio Room - $219</h3>
+		  <p>Ideal combination of style and functionality, offering modern ensuite with walk-in shower, washer/dryer. Fridge & microwave</p>
+		  <p>31m², Super King bed, 1-2 guests. Air-conditioning, 55" flat screen TV with SKY channels FREE unlimited WiFi.</p>
+		</div>
+		</div>
+		</div>
+
+	  <div class="column">
+		<div class="roomCard" data-name="Executive Studio" data-price="249">
+			<img src="Images/executive suite.jpg">
+			<div class="textOverlay">
+		  <h3>Executive Studio - $249</h3>
+		  <p>Perfect haven for business and pleasure. Enjoy more space with your own lounge area complete with comfortable chaise couch, desk, fridge & microwave. Ensuite features bath & separate shower, double handbasins & washer/dryer.</p>
+		  <p>47m², Super King bed, 1-2 guests. Air-conditioning, 55" flat screen TV with SKY channels, FREE unlimited WiFi.</p>
+		</div>
+	  </div>
+		</div>
+
+	  <div class="column">
+		<div class="roomCard" data-name="Two Bedroom" data-price="329">
+			<img src="Images/two bedroom suite.jpg">
+			<div class="textOverlay">
+		  <h3>Two Bedroom - $329</h3>
+		  <p>Stunning suites offering sophisticated style and space. Relax in the large living/dining area or host friends & colleagues. 2 separate bedrooms both with 55" TVs. Bathroom with walk in shower & double showerheads, washer & dryer.</p>
+		  <p>65m², Super King + 2 Single beds, 1-4 guests. Air-conditioning, 3 x 55" flat screen TV with SKY channels, FREE unlimited WiFi.</p>
+		</div>
+	  </div>
+	</div>
+
+	  <div class="column">
+		<div class="roomCard" data-name="Family Suite" data-price="289">
+			<img src="Images/family suite.jpg">
+			<div class="textOverlay">
+		  <h3>Family Suite - $289</h3>
+		  <p>Excellent choice for a family or groups of friends wanting more space. Kids can enjoy their own bedroom. Ensuite with luxurious walk in shower & double showerheads, washer/dryer. Microwave & refrigerator.53m², King + 2 Single beds, 1-4 guests.</p>
+		  <p>Air-conditioning, 2 x 55" flat screen TV with SKY channels, FREE unlimited WiFi.</p>
+		</div>
+	  </div>
+	</div>
+</div>
+		<h2>Step 2 - Induldge Yourself:</h2>
+		<p>Why not tkae the stress out of your visit and add some extra special services to your stay with us.</p>
+		<label><input class="addCheck" data-price="60" type="checkbox" value="Massage">Massage $60</label>
+		<label><input class="addCheck" data-price="50" type="checkbox" value="Facial">Facial $50</label>
+		<label><input class="addCheck" data-price="25" type="checkbox" value="Breakfast">Breakfast $25 per room/day</label>
+		
+		<h2>Step 5 - Enter your details:</h2>
+		<label>First Name:</label> <input autocomplete="on" id="firstNameInput" placeholder="John" required="" title="Enter your first name" type="text"><br>
+		<label>Last Name:</label> <input autocomplete="on" id="lastNameInput" placeholder="Doe" required="" title="Enter your last name" type="text"><br>
+		<label>Email Address:</label> <input autocomplete="on" id="emailInput" placeholder="johndoe@gmail.com" required="" title="Enter your email address" type="email"><br>
+		
+		<h1 id="roomInformation">Room Information:</h1>
+		<table>
+		<tr>
+			<td>Room</td>
+			<td><div id="roomOutput"></div></td>
+		</tr>
+		<tr>
+			<td>Price per night</td>
+			<td><div id="priceOutput"></div></td>
+		</tr>
+		<tr>
+			<td>Check-in Date</td>
+			<td><div id="checkInOutput"></div></td>
+		</tr>
+		<tr>
+			<td>Number of Nights</td>
+			<td><div id="nightsOutput"></div></td>
+		</tr>
+		<tr>
+			<td>Extras</td>
+			<td><div id="extrasOutput"></div></td>
+		</tr>
+		<tr>
+			<td>Breakfast</td>
+			<td><div id="breakfastOutput"></div></td>
+		</tr>
+		<tr>
+			<td>Total Price</td>
+			<td><div id="totalPriceOutput"></div></td>
+		</tr>
+		</table>
+	  </div>
+	
+<button type="button" onclick="checkInputs()" id="confirmButton">Confirm Booking</button>
+	
+<div id="confirmOverlay">
+	<p>Your booking has been confirmed</p>
+	<a href="javascript:void(0)" onClick="document.getElementById('confirmOverlay').style.height = '0'">&times;</a>
+</div>
+	<script src="javascript.js"></script>
+</body>
+	<div class="footer">
+     <footer><img src="images/white_echo logo.png" alt="" class="float_right" width="120">
+			<p>White Eco Motel<br>
+			2 Arthur Street, City Rise, Dunedin , 9016<br>
+			(03) 477-5277<br>
+			white-ecomotels@gmail.com</p>
+		</footer> 
+	</div> 
+</html>
